@@ -9,28 +9,18 @@ namespace Classes
 {
 	public class Employee
 	{
-		String name;
-		String surname;
-		String nickname;
-		String password;
-		int age;
 		private List<int> score = new List<int>();
-		private List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-
-
 
 		public Employee(String name, String surname, int age)
 		{
-			this.name = name;
-			this.surname = surname;
-			this.age = age;
+			this.Name = name;
+			this.Surname = surname;
+			this.Age = age;
 		}
 
-		public Employee(String nickname, string password)
-		{
-			this.nickname = nickname;
-			this.password = password;
-		}
+		public string Name { get; set; }
+		public string Surname { get; set; }
+		public int Age { get; set; }
 
 		public void AddScore(int points)
 		{
@@ -54,8 +44,6 @@ namespace Classes
 			}
 		}
 
-		public string Name { get { return this.name; } }
-		public string Surname { get { return this.surname; } }
-		public int Age { get { return this.age; } }
+		
 	}
 }

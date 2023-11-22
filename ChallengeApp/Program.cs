@@ -1,5 +1,4 @@
 ﻿using Classes;
-
 Employee Marek = new Employee("Marek", "Kowalski", 35);
 Employee Paweł = new Employee("Paweł", "Nowak", 33);
 Employee Andrzej = new Employee("Andrzej", "Olszański", 39);
@@ -36,12 +35,12 @@ foreach (var user in users)
 {
 	if (user.Score > MaxScore)
 	{
-		UserWithMaxResult = user;
 		MaxScore = user.Score;
+		UserWithMaxResult = user;
+
 	}
 }
 
-Console.WriteLine("Imię: " + UserWithMaxResult.Name + " | " + "Nazwisko: " + UserWithMaxResult.Surname + " | " + "Wiek: " + UserWithMaxResult.Age + " | "
-	+ "Ilość punktów: " + UserWithMaxResult.Score);
+Console.WriteLine("Imię:" + UserWithMaxResult.Name + "Nazwisko: " + UserWithMaxResult.Surname + "Wiek: "  +UserWithMaxResult.Age + "Wyni: " + UserWithMaxResult.Score);
 
-List<int> liczby = new List<int>();
+
