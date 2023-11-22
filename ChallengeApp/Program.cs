@@ -41,6 +41,6 @@ foreach (var user in users)
 	}
 }
 
-Console.WriteLine("Imię:" + UserWithMaxResult.Name + "Nazwisko: " + UserWithMaxResult.Surname + "Wiek: "  +UserWithMaxResult.Age + "Wyni: " + UserWithMaxResult.Score);
+Console.WriteLine("Imię:" + UserWithMaxResult.Name + " Nazwisko:" + UserWithMaxResult.Surname + " Wiek:"  +UserWithMaxResult.Age + " Wynik:" + UserWithMaxResult.Score);
 
 
