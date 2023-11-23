@@ -2,7 +2,6 @@
 * Napisz funkcję która odejmie od listy daną wartość
 */
 
-
 using System.Threading.Tasks.Sources;
 
 namespace Classes
@@ -18,9 +17,14 @@ namespace Classes
 			this.Age = age;
 		}
 
-		public string Name { get; set; }
-		public string Surname { get; set; }
-		public int Age { get; set; }
+		public Employee(String name)
+		{
+			this.Name = name;
+		}
+
+		public string Name { get; private set; }
+		public string Surname { get;  private set; }
+		public int Age { get; private set; }
 
 		public void AddScore(int points)
 		{
@@ -34,8 +38,6 @@ namespace Classes
 			this.score.Clear();
 			this.score.Add(Sub);
 		}
-
-
 		public int Score
 		{
 			get
@@ -43,7 +45,5 @@ namespace Classes
 				return this.score.Sum();
 			}
 		}
-
-		
 	}
 }
