@@ -1,49 +1,40 @@
-﻿/*
-* Napisz funkcję która odejmie od listy daną wartość
-*/
+﻿
 
-using System.Threading.Tasks.Sources;
-
-namespace Classes
+namespace ChallengeApp
 {
 	public class Employee
 	{
-		private List<int> score = new List<int>();
-
-		public Employee(String name, String surname, int age)
-		{
-			this.Name = name;
-			this.Surname = surname;
-			this.Age = age;
+		private List<float> grades = new List<float>();
+		public Employee(string name, string surname)
+        {
+            this.Name = name;
+            this.Surname = surname;
+        }
+        public string Name { get; private set; }
+		public string Surname { get; private set; }
+		
+		public void AddGrade(float grade) 
+		{ 
+			this.grades.Add(grade);
 		}
-
-		public Employee(String name)
+		public Statistics GetStatistics()
 		{
-			this.Name = name;
-		}
+			var statistics = new Statistics();
+			statistics.Average = 0;
+			statistics.Max = float.MinValue;
+			statistics.Min = float.MaxValue;
 
-		public string Name { get; private set; }
-		public string Surname { get;  private set; }
-		public int Age { get; private set; }
-
-		public void AddScore(int points)
-		{
-			this.score.Add(points);
-		}
-
-		public void SubScore(int value)
-		{
-			int Sum = this.score.Sum();
-			int Sub = Sum - value;
-			this.score.Clear();
-			this.score.Add(Sub);
-		}
-		public int Score
-		{
-			get
+			foreach(var grade in this.grades) 
 			{
-				return this.score.Sum();
+				statistics.Max = Math.Max(statistics.Max, grade);
+				statistics.Min = Math.Min(statistics.Min, grade);
+				statistics.Average += grade;
+				
 			}
+			statistics.Sum = this.grades.Sum();
+			statistics.Average /= this.grades.Count;
+			
+			return statistics;
 		}
 	}
 }

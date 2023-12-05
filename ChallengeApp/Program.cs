@@ -1,46 +1,22 @@
-﻿using Classes;
-Employee Marek = new Employee("Marek", "Kowalski", 35);
-Employee Paweł = new Employee("Paweł", "Nowak", 33);
-Employee Andrzej = new Employee("Andrzej", "Olszański", 39);
+﻿using ChallengeApp;
 
+var employee = new Employee("Łukasz", "Wałowski");
 
+employee.AddGrade(8);
+employee.AddGrade(9);
+employee.AddGrade(10);
+employee.AddGrade(-11);
 
-Marek.AddScore(4);
-Marek.AddScore(7);
-Marek.AddScore(8);
-Marek.AddScore(9);
+var statistics = employee.GetStatistics();
 
-Paweł.AddScore(4);
-Paweł.AddScore(2);
-Paweł.AddScore(8);
-Paweł.AddScore(9);
-
-Andrzej.AddScore(3);
-Andrzej.AddScore(6);
-Andrzej.AddScore(7);
-Andrzej.AddScore(4);
+Console.WriteLine($"Max Value: {statistics.Max}");
+Console.WriteLine($"Min Value: {statistics.Min}");
+Console.WriteLine($"Average Value: {statistics.Average:N2}");
+Console.WriteLine($"Sum of value: {statistics.Sum}");
 
 
 
 
-int MaxScore = -1;
-Employee UserWithMaxResult = null;
 
-List<Employee> users = new List<Employee>()
-{
-	Marek, Paweł, Andrzej
-};
-
-foreach (var user in users)
-{
-	if (user.Score > MaxScore)
-	{
-		MaxScore = user.Score;
-		UserWithMaxResult = user;
-
-	}
-}
-
-Console.WriteLine("Imię:" + UserWithMaxResult.Name + " Nazwisko:" + UserWithMaxResult.Surname + " Wiek:"  +UserWithMaxResult.Age + " Wynik:" + UserWithMaxResult.Score);
 
 
