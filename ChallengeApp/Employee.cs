@@ -1,6 +1,4 @@
-﻿
-
-namespace ChallengeApp
+﻿namespace ChallengeApp
 {
 	public class Employee
 	{
@@ -14,8 +12,45 @@ namespace ChallengeApp
 		public string Surname { get; private set; }
 		
 		public void AddGrade(float grade) 
-		{ 
-			this.grades.Add(grade);
+		{
+			if (grade >= 0 && grade <= 100)
+			{
+				this.grades.Add(grade);
+			}
+			else { Console.WriteLine("Invalid grade value"); }
+			
+		}
+		public void AddGrade(string grade)
+		{
+			if(float.TryParse(grade, out float result))
+			{
+				this.AddGrade(result);
+			}
+			else
+			{
+				Console.WriteLine("String cannot be float");
+			}
+		}
+		public void AddGrade(double grade)
+		{
+			double numberAdd = (float)grade;
+			this.AddGrade(numberAdd);
+		}
+		public void AddGrade(int grade)
+		{
+			this.AddGrade((float)grade);
+		}
+
+		public void AddGrade(long grade)
+		{
+			var number = (float)grade;
+
+			if (number >= 0 && number <= 100)
+				this.grades.Add(number);
+			else if (number < 0)
+				Console.WriteLine("Value of grade is less than 0");
+			else
+				Console.WriteLine("Value of grade is bigger than 100");
 		}
 		public Statistics GetStatistics()
 		{

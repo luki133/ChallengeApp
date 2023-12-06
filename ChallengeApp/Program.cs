@@ -2,10 +2,14 @@
 
 var employee = new Employee("Łukasz", "Wałowski");
 
-employee.AddGrade(8);
-employee.AddGrade(9);
+employee.AddGrade("5000");
+employee.AddGrade(3);
 employee.AddGrade(10);
-employee.AddGrade(-11);
+employee.AddGrade("luki");
+employee.AddGrade(9000L);
+employee.AddGrade(-5L);
+employee.AddGrade(9L);
+
 
 var statistics = employee.GetStatistics();
 
