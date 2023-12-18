@@ -5,7 +5,7 @@ namespace ChallengeApp_Test
 	public class TypeTests
 	{
 		[Test]
-		public void TestMinValue() 
+		public void TestMinValue()
 		{
 			//arrange
 			var employee = new Employee("Marcin", "Wawrzycki");

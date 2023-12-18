@@ -7,7 +7,6 @@ Console.WriteLine();
 var employee = new Employee("Łukasz", "Wałowski");
 
 
-
 while (true)
 {
 	Console.WriteLine("Podaj kolejną ocenę pracownika: ");

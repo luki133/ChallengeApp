@@ -4,29 +4,34 @@
 	{
 		private List<float> grades = new List<float>();
 		public Employee(string name, string surname)
-        {
-            this.Name = name;
-            this.Surname = surname;
-        }
-        public string Name { get; private set; }
+		{
+			this.Name = name;
+			this.Surname = surname;
+		}
+
+		public Employee()
+		{
+
+		}
+		public string Name { get; private set; }
 		public string Surname { get; private set; }
-		
-		public void AddGrade(float grade) 
+
+		public void AddGrade(float grade)
 		{
 			if (grade >= 0 && grade <= 100)
 			{
 				this.grades.Add(grade);
 			}
-			else 
-			{ 
-				Console.WriteLine("Invalid grade value"); 
+			else
+			{
+				throw new Exception("Invalid grade value");
 			}
-			
+
 		}
 
 		public void AddGrade(char grade)
 		{
-			switch(grade)
+			switch (grade)
 			{
 				case 'A':
 				case 'a':
@@ -49,26 +54,26 @@
 					this.grades.Add(20);
 					break;
 				default:
-					this.grades.Add(0);
-					Console.WriteLine("Wrong letter");
+					throw new Exception("Wrong letter");
+
 					break;
 
 			}
 		}
 		public void AddGrade(String grade)
 		{
-			if(float.TryParse(grade, out float result))
+			if (float.TryParse(grade, out float result))
 			{
 				this.AddGrade(result);
 			}
 
-			else if(char.TryParse(grade, out char Result))
+			else if (char.TryParse(grade, out char Result))
 			{
 				this.AddGrade(Result);
 			}
 			else
 			{
-				Console.WriteLine("String cannot be float");
+				throw new Exception("String cannot be float");
 			}
 		}
 		public void AddGrade(double grade)
@@ -108,8 +113,8 @@
 
 			statistics.Sum = this.grades.Sum();
 			statistics.Average /= this.grades.Count;
-			
-			switch(statistics.Average)
+
+			switch (statistics.Average)
 			{
 				case var average when average >= 80:
 					statistics.AverageLetter = 'A';
@@ -127,7 +132,7 @@
 					statistics.AverageLetter = 'E';
 					break;
 			}
-			
+
 			return statistics;
 		}
 	}
