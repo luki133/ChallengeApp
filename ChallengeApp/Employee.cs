@@ -5,12 +5,9 @@
 		private List<float> grades = new List<float>();
 		public Employee(string name, string surname)
 		{
+
 			this.Name = name;
 			this.Surname = surname;
-		}
-
-		public Employee()
-		{
 
 		}
 		public string Name { get; private set; }
@@ -22,10 +19,18 @@
 			{
 				this.grades.Add(grade);
 			}
+			else if (grade < 0)
+			{
+				throw new Exception("Value of grade is less than 0");
+			}
 			else
 			{
-				throw new Exception("Invalid grade value");
+				throw new Exception("Value of grade is bigger than 0");
 			}
+
+
+
+
 
 		}
 
@@ -56,7 +61,7 @@
 				default:
 					throw new Exception("Wrong letter");
 
-					break;
+
 
 			}
 		}
@@ -72,9 +77,10 @@
 				this.AddGrade(Result);
 			}
 			else
-			{
-				throw new Exception("String cannot be float");
-			}
+				throw new Exception("That variable cannot be change on float");
+
+
+
 		}
 		public void AddGrade(double grade)
 		{
@@ -93,9 +99,14 @@
 			if (number >= 0 && number <= 100)
 				this.grades.Add(number);
 			else if (number < 0)
-				Console.WriteLine("Value of grade is less than 0");
+			{
+				throw new Exception("Value of grade is less than 0");
+			}
 			else
-				Console.WriteLine("Value of grade is bigger than 100");
+			{
+				throw new Exception("Value of grade is bigger than 100");
+			}
+
 		}
 		public Statistics GetStatistics()
 		{
