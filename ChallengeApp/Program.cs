@@ -18,10 +18,9 @@ while (true)
 	}
 	catch (Exception e)
 	{
-
 		Console.WriteLine(e.Message);
 		Console.WriteLine();
-		continue;
+
 	}
 
 

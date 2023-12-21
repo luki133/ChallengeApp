@@ -28,14 +28,6 @@
 				throw new Exception("Value of grade is bigger than 0");
 			}
 
-
-
-
-
-		}
-
-		public void AddGrade(char grade)
-		{
 			switch (grade)
 			{
 				case 'A':
@@ -60,11 +52,10 @@
 					break;
 				default:
 					throw new Exception("Wrong letter");
-
-
-
 			}
 		}
+
+
 		public void AddGrade(String grade)
 		{
 			if (float.TryParse(grade, out float result))
