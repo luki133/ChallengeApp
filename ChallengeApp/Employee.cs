@@ -54,8 +54,6 @@
 					throw new Exception("Wrong letter");
 			}
 		}
-
-
 		public void AddGrade(String grade)
 		{
 			if (float.TryParse(grade, out float result))

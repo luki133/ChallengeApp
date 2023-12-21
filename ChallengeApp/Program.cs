@@ -22,9 +22,6 @@ while (true)
 		Console.WriteLine();
 
 	}
-
-
-
 }
 
 var statistics = employee.GetStatistics();
