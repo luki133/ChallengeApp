@@ -27,33 +27,8 @@
 			{
 				throw new Exception("Value of grade is bigger than 0");
 			}
-
-			switch (grade)
-			{
-				case 'A':
-				case 'a':
-				   this.grades.Add(100);
-				   break;
-				case 'B':
-				case 'b':
-				   this.grades.Add(80);
-				   break;
-				case 'C':
-				case 'c':
-				   this.grades.Add(60);
-				   break;
-				case 'D':
-				case 'd':
-				   this.grades.Add(40);
-				   break;
-				case 'E':
-				case 'e':
-				   this.grades.Add(20);
-				   break;
-				default:
-					throw new Exception("Wrong letter");
-			}
 		}
+
 		public void AddGrade(String grade)
 		{
 			if (float.TryParse(grade, out float result))
@@ -65,17 +40,44 @@
 			{
 				this.AddGrade(Result);
 			}
-			else
-				throw new Exception("That variable cannot be change on float");
+			else throw new Exception("That variable cannot be change on float");
+		}
 
-
-
+		public void AddGrade(char grade)
+		{
+			switch ((float)grade)
+			{
+				case 'A':
+				case 'a':
+					this.grades.Add(100);
+					break;
+				case 'B':
+				case 'b':
+					this.grades.Add(80);
+					break;
+				case 'C':
+				case 'c':
+					this.grades.Add(60);
+					break;
+				case 'D':
+				case 'd':
+					this.grades.Add(40);
+					break;
+				case 'E':
+				case 'e':
+					this.grades.Add(20);
+					break;
+				default:
+					throw new Exception("Wrong letter");
+			}
 		}
 		public void AddGrade(double grade)
 		{
 			double numberAdd = (float)grade;
 			this.AddGrade(numberAdd);
 		}
+
+
 		public void AddGrade(int grade)
 		{
 			this.AddGrade((float)grade);

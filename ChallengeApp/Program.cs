@@ -20,7 +20,6 @@ while (true)
 	{
 		Console.WriteLine(e.Message);
 		Console.WriteLine();
-
 	}
 }
 
