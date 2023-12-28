@@ -1,12 +1,7 @@
 ﻿namespace ChallengeApp
 {
-	public class Person
+	public class Person : System.Object
 	{
-        public Person()
-        {
-            this.Name = "no name";
-        }
-
         public Person(string name)
         {
             this.Name = name;
