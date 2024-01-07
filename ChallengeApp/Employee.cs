@@ -1,16 +1,14 @@
-﻿namespace ChallengeApp
+﻿
+
+namespace ChallengeApp
 {
-	public class Employee
+	public class Employee : Person
 	{
 		private List<float> grades = new List<float>();
-		public Employee(string name, string surname)
-			
-		{
-			this.Surname = surname;
-		}
-		public string Name { get; private set; }
-		public string Surname { get; private set; }
 
+		public Employee(string name, string surname, char gender)
+			: base(name, surname, gender)
+		{ }
 		public void AddGrade(float grade)
 		{
 			if (grade >= 0 && grade <= 100)
@@ -40,7 +38,6 @@
 			}
 			else throw new Exception("That variable cannot be change on float");
 		}
-
 		public void AddGrade(char grade)
 		{
 			switch (grade)
@@ -74,8 +71,6 @@
 			double numberAdd = (float)grade;
 			this.AddGrade(numberAdd);
 		}
-
-
 		public void AddGrade(int grade)
 		{
 			this.AddGrade((float)grade);
@@ -95,7 +90,6 @@
 			{
 				throw new Exception("Value of grade is bigger than 100");
 			}
-
 		}
 		public Statistics GetStatistics()
 		{
