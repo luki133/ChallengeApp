@@ -8,7 +8,7 @@ namespace ChallengeApp_Test
 		public void TestMinValue()
 		{
 			//arrange
-			var employee = new Employee("Marcin", "Wawrzycki", 'M');
+			var employee = new Employee("Marcin", "Wawrzycki", "M");
 			employee.AddGrade('a');
 			employee.AddGrade(89);
 			employee.AddGrade(92);
@@ -23,7 +23,7 @@ namespace ChallengeApp_Test
 		[Test]
 		public void TestMaxValue()
 		{
-			var employee = new Employee("Łukasz", "Wałowski", 'M');
+			var employee = new Employee("Łukasz", "Wałowski", "M");
 			employee.AddGrade('A');
 			employee.AddGrade(81);
 			employee.AddGrade('E');
@@ -37,7 +37,7 @@ namespace ChallengeApp_Test
 		[Test]
 		public void TestAverageValue()
 		{
-			var employee = new Employee("Mateusz", "Dzwonkowski", 'M');
+			var employee = new Employee("Mateusz", "Dzwonkowski", "M");
 			employee.AddGrade('e');
 			employee.AddGrade(23);
 			employee.AddGrade(45);
@@ -51,7 +51,7 @@ namespace ChallengeApp_Test
 		[Test]
 		public void TestSumValue()
 		{
-			var employee = new Employee("Jakub", "Strzygała", 'M');
+			var employee = new Employee("Jakub", "Strzygała", "M");
 			employee.AddGrade(61);
 			employee.AddGrade(87);
 			employee.AddGrade('D');
