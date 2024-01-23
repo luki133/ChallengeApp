@@ -12,7 +12,7 @@ while (true)
 	Console.WriteLine("Podaj ocenę kierownika: ");
 	var input = Console.ReadLine();
 	if (input == "q") break;
-
+	
 	try
 	{
 		supervisor.AddGrade(input);
