@@ -9,7 +9,7 @@ var supervisor = new Supervisor("Mateusz", "Nowak", "M");
 
 while (true)
 {
-	Console.WriteLine("Podaj kolejną ocenę kierownika: ");
+	Console.WriteLine("Podaj ocenę kierownika: ");
 	var input = Console.ReadLine();
 	if (input == "q") break;
 
@@ -29,6 +29,8 @@ Console.WriteLine($"Średnia: {statistics.Average}");
 Console.WriteLine($"Max: {statistics.Max}");
 Console.WriteLine($"Min: {statistics.Min}");
 Console.WriteLine($"Sum: {statistics.Sum}");
+
+
 
 
 

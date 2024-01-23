@@ -1,9 +1,8 @@
-﻿
-
-namespace ChallengeApp
+﻿namespace ChallengeApp
 {
 	public class Supervisor : IEmployee
 	{
+		private List<float> grades = new List<float>();
 		public Supervisor(string name, string surname, string gender)
 		{
 			this.Name = name;
@@ -11,14 +10,10 @@ namespace ChallengeApp
 			this.Gender = gender;
 
 		}
-
 		public string Name { get; set; }
 		public string Surname { get; set; }
 		public string Gender { get; set; }
 
-
-		private List<float> grades = new List<float>();
-		
 		public void AddGrade(string grade)
 		{
 			switch (grade)
